@@ -1,10 +1,24 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>Document</title>
-</head>
-<body>
-	<h1><?= $msg; ?></h1>
-</body>
-</html>
+<table>
+	<thead>
+		<tr>
+			<th>Id</th>
+			<th>Nome</th>
+			<th>Preço</th>
+			<th>Descrição</th>
+		</tr>
+	</thead>
+	<tbody>
+		<?php 
+			foreach($produtos as $prod) {
+		 ?>
+		<tr>
+			<td><?= $prod['id']; ?></td>
+			<td><?= $prod['nome']; ?></td>
+			<td><?= $prod['preco']; ?></td>
+			<td><?= $prod['desc']; ?></td>
+		</tr>
+		<?php 
+			}
+		?>
+	</tbody>
+</table>
