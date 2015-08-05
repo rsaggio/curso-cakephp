@@ -15,8 +15,8 @@
 		<tr>
 			<td><?= $prod['id']; ?></td>
 			<td><?= $prod['nome']; ?></td>
-			<td><?= $prod['preco']; ?></td>
-			<td><?= $prod->calculaDesconto(); ?></td>
+			<td><?= $this->Money->format($prod['preco']); ?></td>
+			<td><?= $this->Money->format($prod->calculaDesconto()); ?></td>
 			<td><?= $prod['descricao']; ?></td>
 		</tr>
 		<?php 
@@ -24,3 +24,6 @@
 		?>
 	</tbody>
 </table>
+<?php
+	echo $this->Html->link('Novo produto',['controller' => 'Produtos', 'action' => 'novo']);
+?>

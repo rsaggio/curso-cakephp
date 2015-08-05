@@ -12,5 +12,13 @@ class ProdutosController extends AppController {
 		
 	}
 
+	public function novo() {
+		$produtosTable = TableRegistry::get('Produtos');
+
+		$produto = $produtosTable->newEntity();
+
+		$this->set('produto',$produto);
+	}
+
 }
 ?>
