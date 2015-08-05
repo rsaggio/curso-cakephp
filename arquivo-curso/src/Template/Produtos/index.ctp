@@ -15,7 +15,7 @@
 			<td><?= $prod['id']; ?></td>
 			<td><?= $prod['nome']; ?></td>
 			<td><?= $prod['preco']; ?></td>
-			<td><?= $prod['desc']; ?></td>
+			<td><?= $prod['descricao']; ?></td>
 		</tr>
 		<?php 
 			}
