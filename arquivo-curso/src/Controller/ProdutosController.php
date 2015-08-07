@@ -20,6 +20,17 @@ class ProdutosController extends AppController {
 		$this->set('produto',$produto);
 	}
 
+	public function edit($id) {
+
+		$produtosTable = TableRegistry::get('Produtos');
+
+		$produto = $produtosTable->get($id);		
+
+		$this->set('produto',$produto);
+
+		$this->render('novo');
+	}
+
 	public function salva() {
 
 		$produtosTable = TableRegistry::get('Produtos');
@@ -33,7 +44,7 @@ class ProdutosController extends AppController {
 			$msg = "Erro ao inserir o produto";
 		}
 
-		$this->set('msg',$msg);
+		$this->redirect('Produtos/index');
 
 	}
 
