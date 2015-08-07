@@ -19,7 +19,10 @@
 			<td><?= $this->Money->format($prod['preco']); ?></td>
 			<td><?= $this->Money->format($prod->calculaDesconto()); ?></td>
 			<td><?= $prod['descricao']; ?></td>
-			<td><?= $this->Html->link('Editar',['controller' => 'Produtos', 'action' => 'edit',$prod['id']]);?></td>
+			<td>
+				<?= $this->Html->link('Editar',['controller' => 'Produtos', 'action' => 'edit',$prod['id']]);?>
+				<?= $this->Form->postLink('Deletar',['controller' => 'Produtos','action' => 'delete',$prod['id']],['confirm' => 'tem certeza que deseja deletar ?']); ?>
+			</td>
 		</tr>
 		<?php 
 			}

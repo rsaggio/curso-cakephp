@@ -31,6 +31,19 @@ class ProdutosController extends AppController {
 		$this->render('novo');
 	}
 
+	public function delete($id) {
+		$produtosTable = TableRegistry::get('Produtos');
+
+		$produto = $produtosTable->get($id);
+
+		if($produtosTable->delete($produto)) {
+			$msg = "Produto removido com sucesso";
+		}else {
+			$msg = "Erro ao deletar o produto";
+		}
+
+		$this->redirect('Produtos/index');
+	}
 	public function salva() {
 
 		$produtosTable = TableRegistry::get('Produtos');
