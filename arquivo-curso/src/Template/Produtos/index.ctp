@@ -31,4 +31,5 @@
 </table>
 <?php
 	echo $this->Html->link('Novo produto',['controller' => 'Produtos', 'action' => 'novo']);
+	echo $this->Html->link('Logout',['controller' => 'Users', 'action' => 'logout']);
 ?>
