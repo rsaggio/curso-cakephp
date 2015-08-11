@@ -1,4 +1,5 @@
 <?php 
+	echo $this->Flash->render('auth');
 	echo $this->Form->create();
 	echo $this->Form->input('username');
 	echo $this->Form->input('password');
