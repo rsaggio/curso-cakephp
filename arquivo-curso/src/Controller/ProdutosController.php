@@ -69,14 +69,19 @@ class ProdutosController extends AppController {
 
 		$produto = $produtosTable->newEntity($this->request->data());
 
-		if($produtosTable->save($produto)) {
+		
+		if(!$produto->errors() && $produtosTable->save($produto)) {
 			$this->Flash->set("Produto inserido com sucesso");
+			$this->redirect('Produtos/index');
 		}
 		else {
+			
 			$this->Flash->set("Erro ao inserir o produto",['element'=> 'error']);
-		}
+			
+			$this->set('produto',$produto);
 
-		$this->redirect('Produtos/index');
+			$this->render('novo');
+		}
 
 	}
 
