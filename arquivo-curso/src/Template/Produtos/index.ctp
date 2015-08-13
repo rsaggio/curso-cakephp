@@ -29,6 +29,15 @@
 		?>
 	</tbody>
 </table>
+<div class="paginator">
+	<ul class="pagination">
+	<?php 
+		echo $this->Paginator->prev("Anterior");
+		echo $this->Paginator->numbers();
+		echo $this->Paginator->next("Proximo");
+	 ?>
+	 </ul>
+</div>
 <?php
 	echo $this->Html->link('Novo produto',['controller' => 'Produtos', 'action' => 'novo']);
 	echo $this->Html->link('Logout',['controller' => 'Users', 'action' => 'logout']);
