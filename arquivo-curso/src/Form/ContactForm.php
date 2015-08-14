@@ -1,9 +1,11 @@
 <?php 
 namespace App\Form;
 
+use Cake\Network\Email\Email;
 use Cake\Form\Form;
 use Cake\Form\Schema;
 use Cake\Validation\Validator;
+
 
 class ContactForm extends Form {
 
@@ -29,5 +31,17 @@ class ContactForm extends Form {
 
 	protected function _execute(array $data) {
 		// aqui vai a lógica
+		$email = new Email('gmail');
+		$email->to('cursocakephp@gmail.com');
+		$email->subject('contato do sistema');
+
+		$msg = "
+			<b>De:</b> {$data['nome']}<br />
+			<b>Email:</b> {$data['email']}<br />
+			<b>msg:</b> {$data['msg']}<br />
+		";
+
+		return $email->send($msg);
+		
 	}
  }
