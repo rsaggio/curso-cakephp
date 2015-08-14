@@ -10,13 +10,25 @@ class ProdutosTable extends Table {
 
 		$validator->requirePresence('nome',true)->notEmpty('nome');		
 		$validator->add('descricao',[
-			'minLenght' => [
+			'minLength' => [
 				'rule' => ['minLength',10],
 				'message' => 'A descrição deve ter pelo menos 10 caracteres'
 			]
 		]);
-		
+
+		$validator->add('preco',
+			[
+				'decimal' => [
+					'rule' => ['decimal',2],
+					'message' => 'O preço deve ser um decimal separado por .'
+				]
+			]
+		);
+
 		return $validator;
+
+		
+
 	}
 }
 
