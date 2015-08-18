@@ -22,9 +22,9 @@ class UsersController extends AppController {
 
 		$entity = $usersTable->newEntity($this->request->data());
 		if($usersTable->save($entity)) {
-			$this->Flash->set('Usuario inserido com sucesso!',['element' => 'success']);
+			$this->Flash->set(__('Usuario inserido com sucesso!'),['element' => 'success']);
 		}else {
-			$this->Flash->set('Usuario inserido com sucesso!',['element' => 'error']);
+			$this->Flash->set(__('Usuario inserido com sucesso!'),['element' => 'error']);
 		}
 
 		$this->redirect(['action' => 'add']);
@@ -39,7 +39,7 @@ class UsersController extends AppController {
 				$this->Auth->setUser($user);
 				return $this->redirect($this->Auth->redirectUrl());
 			}else {
-				$this->Flash->set('Usuário ou senha inválidos',['element' => 'error']);
+				$this->Flash->set(__('Usuário ou senha inválidos'),['element' => 'error']);
 			}
 		}
 

@@ -10,9 +10,9 @@ class ContatoController extends AppController {
 
 		if($this->request->is('post')) {
 			if($contact->execute($this->request->data())) {
-				$this->Flash->success('Mensagem enviada com sucesso');
+				$this->Flash->success(__('Mensagem enviada com sucesso'));
 			}else {
-				$this->Flash->error('Erro ao enviar a mensagem');
+				$this->Flash->error(__('Erro ao enviar a mensagem'));
 			}
 		}
 

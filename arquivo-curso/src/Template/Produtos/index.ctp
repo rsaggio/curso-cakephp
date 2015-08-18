@@ -2,11 +2,11 @@
 	<thead>
 		<tr>
 			<th>Id</th>
-			<th>Nome</th>
-			<th>Preço</th>
-			<th>Preço com desconto</th>
-			<th>Descrição</th>
-			<th>Ação</th>
+			<th><?= __("Nome"); ?></th>
+			<th><?= __("Preço"); ?></th>
+			<th><?= __("Preço com desconto"); ?></th>
+			<th><?= __("Descrição"); ?></th>
+			<th><?= __("Ação"); ?></th>
 		</tr>
 	</thead>
 	<tbody>
@@ -21,7 +21,7 @@
 			<td><?= $prod['descricao']; ?></td>
 			<td>
 				<?= $this->Html->link('Editar',['controller' => 'Produtos', 'action' => 'edit',$prod['id']]);?>
-				<?= $this->Form->postLink('Deletar',['controller' => 'Produtos','action' => 'delete',$prod['id']],['confirm' => 'tem certeza que deseja deletar ?']); ?>
+				<?= $this->Form->postLink('Deletar',['controller' => 'Produtos','action' => 'delete',$prod['id']],['confirm' => __('tem certeza que deseja deletar ?')]); ?>
 			</td>
 		</tr>
 		<?php 
@@ -32,9 +32,9 @@
 <div class="paginator">
 	<ul class="pagination">
 	<?php 
-		echo $this->Paginator->prev("Anterior");
+		echo $this->Paginator->prev(__("Anterior"));
 		echo $this->Paginator->numbers();
-		echo $this->Paginator->next("Proximo");
+		echo $this->Paginator->next(__("Proximo"));
 	 ?>
 	 </ul>
 </div>
